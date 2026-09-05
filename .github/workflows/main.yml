@@ -7,4 +7,4 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/reusable-build.yml
+    uses: rahulldeshpande90/Reusable-Build/.github/workflows/reusable-build.yml
