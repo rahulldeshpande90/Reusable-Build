@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    name: Build Job
+    name: BUILD-JOB
     runs-on: ubuntu-latest
 
     steps:
@@ -15,10 +15,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '20'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build Application
         run: npm run build
+
+      - name: Run Tests
+        run: npm test
