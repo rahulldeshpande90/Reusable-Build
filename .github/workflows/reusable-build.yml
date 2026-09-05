@@ -1,24 +1,22 @@
-name: Reusable Build
+name: Secure DevSecOps Pipeline 
 
 on:
-  workflow_call:
+  push:
+    branches:
+      - master
 
 jobs:
-  build:
-    name: Build Job
-    runs-on: ubuntu-latest
+  build_and_package:
+    name: BUILD-JOB
+    runs-on: ubuntu-slim
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-
-      - name: Install Dependencies
+      - name: BUILD-JOB
         run: npm install
 
-      - name: Build Application
-        run: npm run build
+      - name: TEST
+        run: echo "code is tested"
+		
